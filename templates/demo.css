@@ -1,0 +1,60 @@
+#boxshadow {
+    position: relative;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    padding: 10px;
+    background: white;
+    height: 400px;
+    width: 400px;
+}
+.spinner.loading {
+    display: none;
+    text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 106px;
+    height: 106px;
+}
+
+.spinner.loading:before {
+    content: "";
+    height: 90px;
+    width: 90px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-width: 8px;
+    border-style: solid;
+    border-color: #2180c0 #ccc #ccc;
+    border-radius: 100%;
+    animation: rotation .7s infinite linear;
+}
+
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+#boxshadow img {
+    width: 100%;
+    border: 1px solid #8a4419;
+    border-style: inset;
+}
+
+#boxshadow::after {
+    content: '';
+    position: absolute;
+    z-index: -1; /* hide shadow behind image */
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+    width: 70%;
+    left: 15%; /* one half of the remaining 30% */
+    height: 100px;
+    bottom: 0;
+}

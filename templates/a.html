@@ -1,0 +1,467 @@
+<html>
+<head>
+
+<link rel="stylesheet" href="./demo.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body style="font-family: 'IBM Plex Sans', sans-serif">
+
+<div id="spinner" style="position: absolute;text-align: center;top: 40%;left:47%;z-index: 10;">
+    <div class="spinner-border text-primary">
+
+    </div>
+
+    <h1 style="margin-top: 20px"><b>  MINING..</b></h1>
+
+</div>
+<br/>
+
+<section id="section" >
+
+
+
+    <h2 style="text-align: center" class="title is-2">Blockchain Demo</h2>
+    <div class="row justify-content-md-center">
+        <div class="col-md-6 mr-8 shadow p-3 mb-5 bg-white rounded">
+            <div class="row justify-content-md-center">
+                <div class="col-md-4">
+
+                    <div class="field">
+                        <label class="label">Add New Block</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input  id="newdata"class="input is-success" type="text" placeholder="Text input" value="">
+                            <span class="icon is-small is-left">
+      <i class="fas fa-user"></i>
+    </span>
+                            <span class="icon is-small is-right">
+      <i class="fas fa-check"></i>
+    </span>
+                        </div>
+                        <p class="help is-success">String or Number Accepted</p>
+                        <div class="control">
+                            <button id="add" class="button is-link">Add</button>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="col-md-4">
+
+                    <div class="field">
+                        <label class="label">Change Difficulty</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input  id="diff" class="input is-danger" type="number" placeholder="Email input" max="5" min="1"  value="3">
+                            <span class="icon is-small is-left">
+      <i class="fas fa-envelope"></i>
+    </span>
+                            <span class="icon is-small is-right">
+      <i class="fas fa-exclamation-triangle"></i>
+    </span>
+                        </div>
+                        <p class="help is-danger">Increases Mining Difficulty</p>
+                        <div class="control">
+                            <button id="changediff" class="button is-link">Change</button>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-4">
+
+                    <div class="field">
+                        <label class="label">Reset Blockchain</label>
+                        <div class="control has-icons-left has-icons-right">
+                        <span class="icon is-small is-left">
+      <i class="fas fa-envelope"></i>
+    </span>
+                            <span class="icon is-small is-right">
+      <i class="fas fa-exclamation-triangle"></i>
+    </span>
+                        </div>
+                        <p style="margin-top: 50px" class="help is-danger">Bchain will be Deleted</p>
+                        <div class="control">
+                            <button id="reset" class="button is-link">Reset</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+
+        <div class="col-md-10 justify-center">
+            <div id="chain" class="row">
+
+
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+
+
+
+<script type="text/javascript">
+
+
+    $.get("/", function (rs, status) {
+
+
+        console.log(rs.blockchain);
+        $("#chain").html("<div></div>");
+
+
+        rs.blockchain.map(function (block) {
+
+            var color = "white";
+            if (block.Validate === false) color="red";
+            $("#chain").append(`<div  class="col-md-4 "  > <div  style="background-color: ${color};  " class="mr-8 shadow p-3 mb-5  rounded">
+                <div class="label">
+${rs.blockchain.indexOf(block)}
+                </div>
+                <div class="field">
+                    <label >PrevHash</label>
+                    <div class="control">
+                        <input class="input" value="${block.PrevHash}" type="text" disabled="true" >
+                    </div>
+                </div>
+                <div class="field">
+                    <label >Data</label>
+                   <div class="control">
+                  <input class="input" value="${block.Data}"   id='block${rs.blockchain.indexOf(block)}' type="text"   >
+                            </div>
+                </div>
+ <div class="field">
+   <label >Hash</label>
+    <div class="control">
+   <input value="${block.CurrHash}"  class="input" type="text" disabled="true">
+                     </div>
+     </div>
+   <div class="row">
+     <div class="col-md-6">
+   <button class="button is-light" onclick="f(${rs.blockchain.indexOf(block)})" >Change Data</button>
+    </div>
+<div style='margin-top: 10px' class="col-md-3">  <h4>Nonce</h4></div>
+ <div style='margin-top: 10px' class="col-md-3">    <h4> ${block.Nonce} </h4></div> <div class="col-md-6">
+      </div>
+       </div>
+      </div>`);
+
+
+        })
+    });
+
+
+    $("#add").click(function () {
+        // alert("Handler for .click() called." + $("#newdata").val());
+
+
+        $("#section").hide();
+        $("#spinner").show();
+
+
+        $.get("/addblock?data=" + $("#newdata").val(), function (rs, status) {
+            $("#section").show();
+            $("#spinner").hide();
+
+
+            console.log(rs.blockchain);
+            $("#chain").html("<div></div>");
+
+
+            rs.blockchain.map(function (block) {
+
+                var color = "white";
+                if (block.Validate === false) color="red";
+                $("#chain").append(`<div  class="col-md-4 "  > <div  style="background-color: ${color};  " class="mr-8 shadow p-3 mb-5 bg-white rounded">
+                <div class="label">
+${rs.blockchain.indexOf(block)}
+                </div>
+                <div class="field">
+                    <label >PrevHash</label>
+                    <div class="control">
+                        <input class="input" value="${block.PrevHash}" type="text" disabled="true" >
+                    </div>
+                </div>
+                <div class="field">
+                    <label >Data</label>
+                   <div class="control">
+                  <input class="input" value="${block.Data}"   id='block${rs.blockchain.indexOf(block)}' type="text"   >
+                            </div>
+                </div>
+ <div class="field">
+   <label >Hash</label>
+    <div class="control">
+   <input value="${block.CurrHash}"  class="input" type="text" disabled="true">
+                     </div>
+     </div>
+   <div class="row">
+     <div class="col-md-6">
+   <button class="button is-light" onclick="f(${rs.blockchain.indexOf(block)})" >Change Data</button>
+    </div>
+<div style='margin-top: 10px' class="col-md-3">  <h4>Nonce</h4></div>
+ <div style='margin-top: 10px' class="col-md-3">    <h4> ${block.Nonce} </h4></div> <div class="col-md-6">
+      </div>
+       </div>
+      </div>`);
+
+
+
+            })
+        });
+
+
+    });
+    $("#reset").click(function () {
+
+        $("#section").hide();
+        $("#spinner").show();
+
+        $.get("/reset", function (rs, status) {
+            $("#section").show();
+            $("#spinner").hide();
+
+
+            console.log(rs.blockchain);
+            $("#chain").html("<div></div>");
+
+
+            rs.blockchain.map(function (block) {
+
+                var color = "white";
+                if (block.Validate === false) color="red";
+                $("#chain").append(`<div  class="col-md-4 "  > <div  style="background-color: ${color};  " class="mr-8 shadow p-3 mb-5 bg-white rounded">
+                <div class="label">
+${rs.blockchain.indexOf(block)}
+                </div>
+                <div class="field">
+                    <label >PrevHash</label>
+                    <div class="control">
+                        <input class="input" value="${block.PrevHash}" type="text" disabled="true" >
+                    </div>
+                </div>
+                <div class="field">
+                    <label >Data</label>
+                   <div class="control">
+                  <input class="input" value="${block.Data}"   id='block${rs.blockchain.indexOf(block)}' type="text"   >
+                            </div>
+                </div>
+ <div class="field">
+   <label >Hash</label>
+    <div class="control">
+   <input value="${block.CurrHash}"  class="input" type="text" disabled="true">
+                     </div>
+     </div>
+   <div class="row">
+     <div class="col-md-6">
+   <button class="button is-light" onclick="f(${rs.blockchain.indexOf(block)})" >Change Data</button>
+    </div>
+<div style='margin-top: 10px' class="col-md-3">  <h4>Nonce</h4></div>
+ <div style='margin-top: 10px' class="col-md-3">    <h4> ${block.Nonce} </h4></div> <div class="col-md-6">
+      </div>
+       </div>
+      </div>`);
+
+
+            })
+        });
+
+
+    });
+
+    $("#changediff").click(function () {
+        // alert("Handler for .click() called." + $("#newdata").val());
+        $("#section").hide();
+        $("#spinner").show();
+
+
+
+        $.get("/changediff?diff=" + $("#diff").val(), function (rs, status) {
+
+
+            $("#section").show();
+            $("#spinner").hide();
+
+            console.log(rs.blockchain);
+            $("#chain").html("<div></div>");
+
+                rs.blockchain.map(function (block) {
+
+                    var color = "white";
+                    if (block.Validate === false) color="red";
+                    $("#chain").append(`<div  class="col-md-4 "  > <div  style="background-color: ${color};  " class="mr-8 shadow p-3 mb-5 bg-white rounded">
+                <div class="label">
+${rs.blockchain.indexOf(block)}
+                </div>
+                <div class="field">
+                    <label >PrevHash</label>
+                    <div class="control">
+                        <input class="input" value="${block.PrevHash}" type="text" disabled="true" >
+                    </div>
+                </div>
+                <div class="field">
+                    <label >Data</label>
+                   <div class="control">
+                  <input class="input" value="${block.Data}"   id='block${rs.blockchain.indexOf(block)}' type="text"   >
+                            </div>
+                </div>
+ <div class="field">
+   <label >Hash</label>
+    <div class="control">
+   <input value="${block.CurrHash}"  class="input" type="text" disabled="true">
+                     </div>
+     </div>
+   <div class="row">
+     <div class="col-md-6">
+   <button class="button is-light" onclick="f(${rs.blockchain.indexOf(block)})" >Change Data</button>
+    </div>
+<div style='margin-top: 10px' class="col-md-3">  <h4>Nonce</h4></div>
+ <div style='margin-top: 10px' class="col-md-3">    <h4> ${block.Nonce} </h4></div> <div class="col-md-6">
+      </div>
+       </div>
+      </div>`);
+
+
+                })
+
+        });
+
+
+    });
+
+
+    function f(e) {
+        // alert("Handler for .click() called." + $("#newdata").val());
+        var str = "#block" + e;
+
+        $("#section").hide();
+        $("#spinner").show();
+
+        $.get("/setdata?index=" + e + "&data=" + $(str).val(), function (rs, status) {
+
+            console.log(rs.blockchain);
+            $("#chain").html("<div></div>");
+
+            $("#section").show();
+            $("#spinner").hide();
+
+
+
+                rs.blockchain.map(function (block) {
+
+                    var color = "white";
+                    if (block.Validate === false) color="red";
+                    $("#chain").append(`<div  class="col-md-4 "  > <div  style="background-color: ${color};  " class="mr-8 shadow p-3 mb-5 bg-white rounded">
+                <div class="label">
+${rs.blockchain.indexOf(block)}
+                </div>
+                <div class="field">
+                    <label >PrevHash</label>
+                    <div class="control">
+                        <input class="input" value="${block.PrevHash}" type="text" disabled="true" >
+                    </div>
+                </div>
+                <div class="field">
+                    <label >Data</label>
+                   <div class="control">
+                  <input class="input" value="${block.Data}"   id='block${rs.blockchain.indexOf(block)}' type="text"   >
+                            </div>
+                </div>
+ <div class="field">
+   <label >Hash</label>
+    <div class="control">
+   <input value="${block.CurrHash}"  class="input" type="text" disabled="true">
+                     </div>
+     </div>
+   <div class="row">
+     <div class="col-md-6">
+   <button class="button is-light" onclick="f(${rs.blockchain.indexOf(block)})" >Change Data</button>
+    </div>
+<div style='margin-top: 10px' class="col-md-3">  <h4>Nonce</h4></div>
+ <div style='margin-top: 10px' class="col-md-3">    <h4> ${block.Nonce} </h4></div> <div class="col-md-6">
+      </div>
+       </div>
+      </div>`);
+
+
+                })
+
+        });
+
+        $.get("/validate", function (rs, status) {
+
+            console.log(rs.blockchain);
+            $("#chain").html("<div></div>");
+
+
+
+
+                rs.blockchain.map(function (block) {
+
+                    var color = "white";
+                    if (block.Validate === false) color="red";
+                    $("#chain").append(`<div  class="col-md-4 "  > <div  style="background-color: ${color};  " class="mr-8 shadow p-3 mb-5  rounded">
+                <div class="label">
+${rs.blockchain.indexOf(block)}
+                </div>
+                <div class="field">
+                    <label >PrevHash</label>
+                    <div class="control">
+                        <input class="input" value="${block.PrevHash}" type="text" disabled="true" >
+                    </div>
+                </div>
+                <div class="field">
+                    <label >Data</label>
+                   <div class="control">
+                  <input class="input" value="${block.Data}"   id='block${rs.blockchain.indexOf(block)}' type="text"   >
+                            </div>
+                </div>
+ <div class="field">
+   <label >Hash</label>
+    <div class="control">
+   <input value="${block.CurrHash}"  class="input" type="text" disabled="true">
+                     </div>
+     </div>
+   <div class="row">
+     <div class="col-md-6">
+   <button class="button is-light" onclick="f(${rs.blockchain.indexOf(block)})" >Change Data</button>
+    </div>
+<div style='margin-top: 10px' class="col-md-3">  <h4>Nonce</h4></div>
+ <div style='margin-top: 10px' class="col-md-3">    <h4> ${block.Nonce} </h4></div> <div class="col-md-6">
+      </div>
+       </div>
+      </div>`);
+
+
+                })
+
+        });
+
+
+    }
+
+
+</script>
+</body>
+
+
+</html>
