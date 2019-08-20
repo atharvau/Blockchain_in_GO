@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+<body style="font-family: 'IBM Plex Sans', sans-serif;">
+
+
+<div class="fluid">
+
+    <br/>    <br/>
+    <br/>    <br/>
+    <br/>    <br/>
+
+    <h1 class="title is-2 text-center">Wallets</h1>
+
+
+    <div id="wallet" class="row justify-content-center">
+        <div class="col-md-3">
+
+            <div class="row shadow p-3 mb-5 bg-white rounded">
+                <div class="col-md-4">
+                    <img src="https://www.w3schools.com/howto/img_avatar.png" style="  border-radius: 50%;">
+                </div>
+                <div class="col-md-4">
+                    <div><h2>TOM</h2></div>
+                    <div><h4>TOM</h4></div>
+                </div>
+                <div class="col-md-4">
+                    <div id="a"><h1 style="font-size: 45px">50</h1></div></div>
+            </div>
+        </div>
+
+
+        <div class="col-md-3">
+            <div style="padding: 22px" class="row shadow p-3 mb-5 bg-white rounded">
+                <div class="col-md-4">
+                    <img src="https://www.w3schools.com/howto/img_avatar.png" style="  border-radius: 50%;">
+                </div>
+                <div class="col-md-4">
+                    <div><h2>TOM</h2></div>
+                    <div><h4>TOM</h4></div>
+                </div>
+                <div class="col-md-4">
+                    <div id="b"><h1 style="font-size: 45px">50</h1></div></div>
+            </div>
+        </div> <div class="col-md-3">
+            <div style="padding: 22px" class="row shadow p-3 mb-5 bg-white rounded">
+                <div class="col-md-4">
+                    <img src="https://www.w3schools.com/howto/img_avatar.png" style="  border-radius: 50%;">
+                </div>
+                <div class="col-md-4">
+                    <div><h2>TOM</h2></div>
+                    <div><h4>TOM</h4></div>
+                </div>
+                <div class="col-md-4">
+                    <div id="c"><h1 style="font-size: 45px">50</h1></div></div>
+            </div>
+        </div>
+    </div>
+
+    <br/>    <br/>
+
+    <h1 class="title is-2 text-center">Add New Transaction/Block</h1>
+
+<br/><br/>
+
+
+    <div class="text-center row justify-content-center" >
+        <div class="col-md-1 ">
+            <h1 ><button class="btn" style="color:white;font-size: 25px;background-image: linear-gradient(to right, #02AAB0 0%, #00CDAC 51%, #02AAB0 100%)" >Focus</button>
+            </h1>
+        </div>
+    </div>
+
+
+
+    <div hidden style="position: absolute;z-index: 11" id="send" class="row justify-content-center">
+        <div class="col-md-8 shadow">
+            <div class="row">
+                <div class="col-md-3">
+                    <div><h1>Sender</h1></div>
+                    <div class="field has-addons">
+                        <div class="control is-expanded">
+                            <div class="select is-fullwidth">
+                                <select id="sender" name="sender">
+                                    <option value="0x111111">Steve</option>
+                                    <option value="0x222222">Mark</option>
+                                    <option value="0x333333">Bill</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div><h1>Reciver</h1></div>
+                    <div class="field has-addons">
+                        <div class="control is-expanded">
+                            <div class="select is-fullwidth">
+                                <select id="reciver" name="reciver">
+                                    <option value="0x111111">Steve</option>
+                                    <option value="0x222222">Mark</option>
+                                    <option value="0x333333">Bill</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div><h1>Minner</h1></div>
+                    <div class="field has-addons">
+                        <div class="control is-expanded">
+                            <div class="select is-fullwidth">
+                                <select id="miner" disabled name="miner">
+                                    <option value="0x111111">Steve</option>
+                                    <option value="0x222222">Mark</option>
+                                    <option value="0x333333">Bill</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div><h1>Amount</h1></div>
+
+                    <div class="field has-addons has-addons-centered">
+                        <p class="control">
+
+                        </p>
+                        <p class="control">
+                            <input id="amount" min="1" class="input" type="number" placeholder="Amount of money">
+                        </p>
+                        <p class="control">
+                            <button id="transfer" class="button is-primary">
+                                Transfer
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+<br/>
+        </div>
+
+    </div>
+<br/>
+    <br/>
+    <br/><br/>
+
+    <div class="row" id="chain"></div>
+
+
+</div>
+
+
+<script>
+    var a = 0;
+    var b = 0;
+    var c = 0;
+    var blockchain;
+
+    $.get("/crypto", function (rs, status) {
+        console.log(rs.blockchain);
+        $("#chain").html("<div></div>");
+
+
+
+
+
+blockchain=rs.blockchain;
+        rs.blockchain.map(function (block) {
+
+
+
+            if (block.Data.Reciver === "0x111111") a = a + block.Data.Amount;
+            if (block.Data.Reciver === "0x222222") b = b + block.Data.Amount;
+            if (block.Data.Reciver === "0x333333") c = c + block.Data.Amount;
+
+            if (block.Data.Sender === "0x111111") a = a - block.Data.Amount;
+            if (block.Data.Sender === "0x222222") b = b - block.Data.Amount;
+            if (block.Data.Sender === "0x333333") c = c - block.Data.Amount;
+
+            if (block.Data.Miner === "0x111111") a = a++;
+            if (block.Data.Miner === "0x222222") b = b++;
+            if (block.Data.Miner === "0x333333") c = c++;
+
+            console.log(a, b, c);
+
+
+            $("#a").html(`<h1 style="font-size: 45px">${a}</h1></div>`);
+            $("#b").html(`<h1 style="font-size: 45px">${b}</h1></div>`);
+            $("#c").html(`<h1 style="font-size: 45px">${c}</h1></div>`);
+
+
+            var color = "white";
+            if (block.Validate === false) color = "red";
+
+            $("#chain").append(`
+  <div class="col-md-4">
+
+
+        <div style="font-size: 13px" class="mr-8 shadow p-3 mb-5 bg-white rounded">
+            <div class="label">
+                ${rs.blockchain.indexOf(block)}
+            </div>
+
+            <div class="row">
+                <div class="col-md-3"><b>PrevHash</b></div>
+                <div class="col-md-9">   ${block.PrevHash}
+</div>
+            </div>
+            <div class="row">
+                <div class="col-md-3"><b>Sender</b></div>
+                <div class="col-md-9">  ${block.Data.Sender}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-3"><b>Amount</b></div>
+                <div class="col-md-9"><span><input value="${block.Data.Amount}"></span></div>
+            </div>
+            <div class="row">
+                <div class="col-md-3"><b>Reciver</b></div>
+                <div class="col-md-9">${block.Data.Reciver}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-3"><b>Hash</b></div>
+                <div class="col-md-9">${block.CurrHash}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-3"><b>Nonce</b></div>
+                <div class="col-md-9">${block.Nonce}</div>
+            </div>
+
+
+        </div>
+
+
+    </div>`)
+
+
+        })
+
+
+
+
+
+
+
+    });
+
+
+    $("#sender").on('change', function () {
+
+
+        if (this.value === "0x111111") {
+
+            $("#reciver").html(`<option value="0x222222">Mark   </option><option value="0x333333">Bill   </option>`);
+
+
+        } else if (this.value === "0x222222") {
+
+            $("#reciver").html(`    <option value="0x111111">Steve</option>
+                                    <option value="0x333333">Bill</option>`);
+
+
+        } else if (this.value === "0x333333") {
+
+            $("#reciver").html(`<option value="0x111111">Steve</option>
+                                    <option value="0x222222">Mark</option>`);
+
+
+        }
+
+
+    });
+
+
+    $("#transfer").click(function () {
+
+        var sender = $("#sender").val();
+        var reciver = $("#reciver").val();
+        var amount = $("#amount").val();
+var go=false;
+
+        if (sender === "0x111111") {
+            if (a >= amount) {
+                go=true;
+            } else {
+                alert("Insufficient Amount ! Please Select Other Account")
+            }
+        }
+        if (sender === "0x222222") {
+            if (b >= amount) {
+                go=true;
+
+            } else {
+                alert("Insufficient Amount ! Please Select Other Account")
+            }
+        }
+        if (sender === "0x333333") {
+            if (c >= amount) {
+                go=true;
+
+            } else {
+                alert("Insufficient Amount ! Please Select Other Account")
+            }
+        }
+
+
+        if (sender === "0x111111" && reciver === "0x222222" || sender === "0x222222" && reciver === "0x111111") {
+            $("#miner").html(`    <option value="0x333333">Bill</option>
+                                    `);
+
+
+        }
+
+        if (sender === "0x333333" && reciver === "0x222222" || sender === "0x222222" && reciver === "0x333333") {
+            $("#miner").html(`   <option value="0x111111">Steve</option>
+                                    `);
+
+
+        }
+
+        if (sender === "0x111111" && reciver === "0x333333" || sender === "0x333333" && reciver === "0x111111") {
+            $("#miner").html(`   <option value="0x222222">Mark</option>
+                                    `);
+        }
+
+
+        var miner = $("#miner").val();
+
+        if(go===true) {
+            $.get(`/cryptoadd?miner=${miner}&sender=${sender}&amount=${amount}&reciver=${reciver}&prevhash=${blockchain[blockchain.length - 1].CurrHash}`, function (rs, status) {
+
+                console.log(rs.blockchain);
+                $("#chain").html("<div></div>");
+
+
+                blockchain = rs.blockchain;
+                rs.blockchain.map(function (block) {
+
+
+                    if (block.Data.Reciver === "0x111111") a = a + block.Data.Amount;
+                    if (block.Data.Reciver === "0x222222") b = b + block.Data.Amount;
+                    if (block.Data.Reciver === "0x333333") c = c + block.Data.Amount;
+
+                    if (block.Data.Sender === "0x111111") a = a - block.Data.Amount;
+                    if (block.Data.Sender === "0x222222") b = b - block.Data.Amount;
+                    if (block.Data.Sender === "0x333333") c = c - block.Data.Amount;
+
+                    if (block.Data.Miner === "0x111111") a = a++;
+                    if (block.Data.Miner === "0x222222") b = b++;
+                    if (block.Data.Miner === "0x333333") c = c++;
+
+                    console.log(a, b, c);
+
+
+                    $("#a").html(`<h1 style="font-size: 45px">${a}</h1></div>`);
+                    $("#b").html(`<h1 style="font-size: 45px">${b}</h1></div>`);
+                    $("#c").html(`<h1 style="font-size: 45px">${c}</h1></div>`);
+
+
+                    var color = "white";
+                    if (block.Validate === false) color = "red";
+
+                    $("#chain").append(`
+  <div class="col-md-4">
+
+
+        <div style="font-size: 13px" class="mr-8 shadow p-3 mb-5 bg-white rounded">
+            <div class="label">
+                ${rs.blockchain.indexOf(block)}
+            </div>
+
+            <div class="row">
+                <div class="col-md-3"><b>PrevHash</b></div>
+                <div class="col-md-9">   ${block.PrevHash}
+</div>
+            </div>
+            <div class="row">
+                <div class="col-md-3"><b>Sender</b></div>
+                <div class="col-md-9">  ${block.Data.Sender}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-3"><b>Amount</b></div>
+                <div class="col-md-9"><span><input value="${block.Data.Amount}"></span></div>
+            </div>
+            <div class="row">
+                <div class="col-md-3"><b>Reciver</b></div>
+                <div class="col-md-9">${block.Data.Reciver}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-3"><b>Hash</b></div>
+                <div class="col-md-9">${block.CurrHash}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-3"><b>Nonce</b></div>
+                <div class="col-md-9">${block.Nonce}</div>
+            </div>
+
+
+        </div>
+
+
+    </div>`)
+
+
+                })
+
+
+            });
+        }
+    });
+
+</script>
+</body>
+</html>
