@@ -19,7 +19,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 </head>
-<body style="font-family: 'IBM Plex Sans', sans-serif;">
+<body style="font-family: 'IBM Plex Sans', sans-serif;   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+">
 
 
 <div class="fluid">
@@ -28,46 +30,47 @@
     <br/>    <br/>
     <br/>    <br/>
 
-    <h1 class="title is-2 text-center">Wallets</h1>
+    <h1  style="color: black;text-align: center" class="title">Wallets</h1>
 
 
     <div id="wallet" class="row justify-content-center">
         <div class="col-md-3">
 
-            <div class="row shadow p-3 mb-5 bg-white rounded">
+            <div class="row shadow-lg p-3 mb-5 bg-white rounded">
                 <div class="col-md-4">
-                    <img src="https://www.w3schools.com/howto/img_avatar.png" style="  border-radius: 50%;">
+                    <img src="https://i.imgur.com/yMY1aiG.png" style="  border-radius: 50%;">
                 </div>
                 <div class="col-md-4">
-                    <div><h2>TOM</h2></div>
-                    <div><h4>TOM</h4></div>
+                    <div style="margin-top: 20px"><h2>STEVE </h2></div>
+                    <div><h4>0x111111</h4></div>
                 </div>
                 <div class="col-md-4">
-                    <div id="a"><h1 style="font-size: 45px">50</h1></div></div>
+
+                    <div  style="margin-top: 10px" id="a"><h1 style="font-size: 55px">50</h1></div></div>
             </div>
         </div>
 
 
         <div class="col-md-3">
-            <div style="padding: 22px" class="row shadow p-3 mb-5 bg-white rounded">
+            <div style="padding: 22px" class="row shadow-lg p-3 mb-5 bg-white rounded">
                 <div class="col-md-4">
-                    <img src="https://www.w3schools.com/howto/img_avatar.png" style="  border-radius: 50%;">
+                    <img src="https://i.imgur.com/TO08xap.png" style="  border-radius: 50%;">
                 </div>
                 <div class="col-md-4">
-                    <div><h2>TOM</h2></div>
-                    <div><h4>TOM</h4></div>
+                    <div style="margin-top: 20px"><h2>MARK </h2></div>
+                    <div><h4>0x222222</h4></div>
                 </div>
                 <div class="col-md-4">
                     <div id="b"><h1 style="font-size: 45px">50</h1></div></div>
             </div>
         </div> <div class="col-md-3">
-            <div style="padding: 22px" class="row shadow p-3 mb-5 bg-white rounded">
+            <div style="padding: 22px" class="row shadow-lg p-3 mb-5 bg-white rounded">
                 <div class="col-md-4">
-                    <img src="https://www.w3schools.com/howto/img_avatar.png" style="  border-radius: 50%;">
+                    <img src="https://i.imgur.com/TQhJzRV.png" style="  border-radius: 50%;">
                 </div>
                 <div class="col-md-4">
-                    <div><h2>TOM</h2></div>
-                    <div><h4>TOM</h4></div>
+                    <div style="margin-top: 20px"><h2>BILL </h2></div>
+                    <div><h4>0x333333</h4></div>
                 </div>
                 <div class="col-md-4">
                     <div id="c"><h1 style="font-size: 45px">50</h1></div></div>
@@ -82,19 +85,22 @@
 <br/><br/>
 
 
-    <div class="text-center row justify-content-center" >
-        <div class="col-md-1 ">
-            <h1 ><button class="btn" style="color:white;font-size: 25px;background-image: linear-gradient(to right, #02AAB0 0%, #00CDAC 51%, #02AAB0 100%)" >Focus</button>
-            </h1>
-        </div>
-    </div>
+{{/*    <div class="text-center row justify-content-center" >*/}}
+{{/*        <div class="col-md-1 ">*/}}
+{{/*            <h1 ><button class="btn" style="color:white;font-size: 25px;background-image: linear-gradient(to right, #02AAB0 0%, #00CDAC 51%, #02AAB0 100%)" >Focus</button>*/}}
+{{/*            </h1>*/}}
+{{/*        </div>*/}}
+{{/*    </div>*/}}
 
 
 
-    <div hidden style="position: absolute;z-index: 11" id="send" class="row justify-content-center">
-        <div class="col-md-8 shadow">
+    <div  style="position: relative;z-index: 11" id="send" class="row justify-content-center ">
+
+        <div class="col-md-8 bg-white shadow-lg shadow-lg shadow-lg">
             <div class="row">
                 <div class="col-md-3">
+                    <br/>
+
                     <div><h1>Sender</h1></div>
                     <div class="field has-addons">
                         <div class="control is-expanded">
@@ -110,6 +116,8 @@
                     </div>
                 </div>
                 <div class="col-md-3">
+                    <br/>
+
                     <div><h1>Reciver</h1></div>
                     <div class="field has-addons">
                         <div class="control is-expanded">
@@ -125,6 +133,8 @@
                     </div>
                 </div>
                 <div class="col-md-3">
+                    <br/>
+
                     <div><h1>Minner</h1></div>
                     <div class="field has-addons">
                         <div class="control is-expanded">
@@ -140,6 +150,8 @@
                     </div>
                 </div>
                 <div class="col-md-3">
+                    <br/>
+
                     <div><h1>Amount</h1></div>
 
                     <div class="field has-addons has-addons-centered">
@@ -165,7 +177,7 @@
     <br/>
     <br/><br/>
 
-    <div class="row" id="chain"></div>
+    <div class="row container" id="chain"></div>
 
 
 </div>
@@ -384,7 +396,7 @@ var go=false;
   <div class="col-md-4">
 
 
-        <div style="font-size: 13px" class="mr-8 shadow p-3 mb-5 bg-white rounded">
+        <div style="font-size: 13px" class="mr-8 shadow-lg p-3 mb-5 bg-white rounded">
             <div class="label">
                 ${rs.blockchain.indexOf(block)}
             </div>
@@ -400,7 +412,7 @@ var go=false;
             </div>
             <div class="row">
                 <div class="col-md-3"><b>Amount</b></div>
-                <div class="col-md-9"><span><input value="${block.Data.Amount}"></span></div>
+                <div class="col-md-9"><span><input class="input is-info"  value="${block.Data.Amount}"></span></div>
             </div>
             <div class="row">
                 <div class="col-md-3"><b>Reciver</b></div>
