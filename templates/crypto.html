@@ -17,173 +17,209 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"/>
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 </head>
 <body style="font-family: 'IBM Plex Sans', sans-serif;   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 ">
-
-
-<div class="fluid">
-
-    <br/>    <br/>
-    <br/>    <br/>
-    <br/>    <br/>
-
-    <h1  style="color: black;text-align: center" class="title">Wallets</h1>
-
-
-    <div id="wallet" class="row justify-content-center">
-        <div class="col-md-3">
-
-            <div class="row shadow-lg p-3 mb-5 bg-white rounded">
-                <div class="col-md-4">
-                    <img src="https://i.imgur.com/yMY1aiG.png" style="  border-radius: 50%;">
-                </div>
-                <div class="col-md-4">
-                    <div style="margin-top: 20px"><h2>STEVE </h2></div>
-                    <div><h4>0x111111</h4></div>
-                </div>
-                <div class="col-md-4">
-
-                    <div  style="margin-top: 10px" id="a"><h1 style="font-size: 55px">50</h1></div></div>
-            </div>
-        </div>
-
-
-        <div class="col-md-3">
-            <div style="padding: 22px" class="row shadow-lg p-3 mb-5 bg-white rounded">
-                <div class="col-md-4">
-                    <img src="https://i.imgur.com/TO08xap.png" style="  border-radius: 50%;">
-                </div>
-                <div class="col-md-4">
-                    <div style="margin-top: 20px"><h2>MARK </h2></div>
-                    <div><h4>0x222222</h4></div>
-                </div>
-                <div class="col-md-4">
-                    <div id="b"><h1 style="font-size: 45px">50</h1></div></div>
-            </div>
-        </div> <div class="col-md-3">
-            <div style="padding: 22px" class="row shadow-lg p-3 mb-5 bg-white rounded">
-                <div class="col-md-4">
-                    <img src="https://i.imgur.com/TQhJzRV.png" style="  border-radius: 50%;">
-                </div>
-                <div class="col-md-4">
-                    <div style="margin-top: 20px"><h2>BILL </h2></div>
-                    <div><h4>0x333333</h4></div>
-                </div>
-                <div class="col-md-4">
-                    <div id="c"><h1 style="font-size: 45px">50</h1></div></div>
-            </div>
-        </div>
-    </div>
-
-    <br/>    <br/>
-
-    <h1 class="title is-2 text-center">Add New Transaction/Block</h1>
-
-<br/><br/>
-
-
-{{/*    <div class="text-center row justify-content-center" >*/}}
-{{/*        <div class="col-md-1 ">*/}}
-{{/*            <h1 ><button class="btn" style="color:white;font-size: 25px;background-image: linear-gradient(to right, #02AAB0 0%, #00CDAC 51%, #02AAB0 100%)" >Focus</button>*/}}
-{{/*            </h1>*/}}
-{{/*        </div>*/}}
-{{/*    </div>*/}}
-
-
-
-    <div  style="position: relative;z-index: 11" id="send" class="row justify-content-center ">
-
-        <div class="col-md-8 bg-white shadow-lg shadow-lg shadow-lg">
-            <div class="row">
-                <div class="col-md-3">
-                    <br/>
-
-                    <div><h1>Sender</h1></div>
-                    <div class="field has-addons">
-                        <div class="control is-expanded">
-                            <div class="select is-fullwidth">
-                                <select id="sender" name="sender">
-                                    <option value="0x111111">Steve</option>
-                                    <option value="0x222222">Mark</option>
-                                    <option value="0x333333">Bill</option>
-                                </select>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <br/>
-
-                    <div><h1>Reciver</h1></div>
-                    <div class="field has-addons">
-                        <div class="control is-expanded">
-                            <div class="select is-fullwidth">
-                                <select id="reciver" name="reciver">
-                                    <option value="0x111111">Steve</option>
-                                    <option value="0x222222">Mark</option>
-                                    <option value="0x333333">Bill</option>
-                                </select>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <br/>
-
-                    <div><h1>Minner</h1></div>
-                    <div class="field has-addons">
-                        <div class="control is-expanded">
-                            <div class="select is-fullwidth">
-                                <select id="miner" disabled name="miner">
-                                    <option value="0x111111">Steve</option>
-                                    <option value="0x222222">Mark</option>
-                                    <option value="0x333333">Bill</option>
-                                </select>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <br/>
-
-                    <div><h1>Amount</h1></div>
-
-                    <div class="field has-addons has-addons-centered">
-                        <p class="control">
-
-                        </p>
-                        <p class="control">
-                            <input id="amount" min="1" class="input" type="number" placeholder="Amount of money">
-                        </p>
-                        <p class="control">
-                            <button id="transfer" class="button is-primary">
-                                Transfer
-                            </button>
-                        </p>
-                    </div>
-                </div>
-            </div>
-<br/>
-        </div>
+<div id="spinner" style="position: absolute;text-align: center;top: 40%;left:47%;z-index: 10;">
+    <div class="spinner-border text-primary">
 
     </div>
-<br/>
-    <br/>
-    <br/><br/>
 
-    <div class="row container" id="chain"></div>
-
+    <h1 style="margin-top: 20px"><b>  MINING..</b></h1>
 
 </div>
+<section id="section">
+
+    <div class="fluid">
+
+        <br/> <br/>
+        <br/> <br/>
+        <br/> <br/>
+
+        <h1  style="color: black;text-align: center" class="title">Wallets</h1>
+        <br/>
+
+
+
+        <div  data-aos="flip-left" id="wallet" class="row justify-content-center">
+            <div  class="col-md-3">
+
+                <div class="row shadow-lg p-3 mb-5 bg-white rounded">
+                    <div class="col-md-4">
+                        <img src="https://i.imgur.com/yMY1aiG.png" style="  border-radius: 50%;">
+                    </div>
+                    <div class="col-md-4">
+                        <div style="margin-top: 20px"><h2>STEVE </h2></div>
+                        <div><h4>0x111111</h4></div>
+                    </div>
+                    <div class="col-md-4">
+
+                        <div style="margin-top: 10px" id="a"><h1 style="font-size: 55px">50</h1></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-3">
+                <div style="padding: 22px" class="row shadow-lg p-3 mb-5 bg-white rounded">
+                    <div class="col-md-4">
+                        <img src="https://i.imgur.com/TO08xap.png" style="  border-radius: 50%;">
+                    </div>
+                    <div class="col-md-4">
+                        <div style="margin-top: 20px"><h2>MARK </h2></div>
+                        <div><h4>0x222222</h4></div>
+                    </div>
+                    <div class="col-md-4">
+                        <div id="b"><h1 style="font-size: 45px">50</h1></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div style="padding: 22px" class="row shadow-lg p-3 mb-5 bg-white rounded">
+                    <div class="col-md-4">
+                        <img src="https://i.imgur.com/TQhJzRV.png" style="  border-radius: 50%;">
+                    </div>
+                    <div class="col-md-4">
+                        <div style="margin-top: 20px"><h2>BILL </h2></div>
+                        <div><h4>0x333333</h4></div>
+                    </div>
+                    <div class="col-md-4">
+                        <div id="c"><h1 style="font-size: 45px">50</h1></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br/> <br/>
+
+        <h1  style="color: black;text-align: center" class="title">Add New Transaction/Block</h1>
+
+        <br/>
+        <br/>
+
+
+        {{/*    <div class="text-center row justify-content-center" >*/}}
+        {{/*        <div class="col-md-1 ">*/}}
+        {{/*            <h1 ><button class="btn" style="color:white;font-size: 25px;background-image: linear-gradient(to right, #02AAB0 0%, #00CDAC 51%, #02AAB0 100%)" >Focus</button>*/}}
+        {{/*            </h1>*/}}
+        {{/*        </div>*/}}
+        {{/*    </div>*/}}
+
+
+        <div data-aos="flip-left" style="position: relative;z-index: 11" id="send" class="row justify-content-center ">
+
+            <div class="col-md-8 bg-white shadow-lg shadow-lg shadow-lg">
+                <div class="row">
+                    <div class="col-md-3">
+                        <br/>
+
+                        <div><h1>Sender</h1></div>
+                        <div class="field has-addons">
+                            <div class="control is-expanded">
+                                <div class="select is-fullwidth">
+                                    <select id="sender" name="sender">
+                                        <option value="0x111111">Steve</option>
+                                        <option value="0x222222">Mark</option>
+                                        <option value="0x333333">Bill</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <br/>
+
+                        <div><h1>Reciver</h1></div>
+                        <div class="field has-addons">
+                            <div class="control is-expanded">
+                                <div class="select is-fullwidth">
+                                    <select id="reciver" name="reciver">
+                                        <option value="0x111111">Steve</option>
+                                        <option value="0x222222">Mark</option>
+                                        <option value="0x333333">Bill</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <br/>
+
+                        <div><h1>Minner</h1></div>
+                        <div class="field has-addons">
+                            <div class="control is-expanded">
+                                <div class="select is-fullwidth">
+                                    <select id="miner" disabled name="miner">
+                                        <option value="0x111111">Steve</option>
+                                        <option value="0x222222">Mark</option>
+                                        <option value="0x333333">Bill</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <br/>
+
+                        <div><h1>Amount</h1></div>
+
+                        <div class="field has-addons has-addons-centered">
+                            <p class="control">
+
+                            </p>
+                            <p class="control">
+                                <input id="amount" min="1" class="input" type="number" placeholder="Amount of money">
+                            </p>
+                            <p class="control">
+                            <span>
+
+                            <button id="transfer" class="button is-primary">
+                                Transfer
+
+                            </button>
+                            </span>
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+            </div>
+
+        </div>
+        <br/>
+        <br/> <br/>
+
+        <h1  style="color: black;text-align: center" class="title">Blockchain</h1>
+
+        <br/>
+
+
+
+        <div style="padding: 60px" class="row " id="chain"></div>
+
+
+    </div>
+
+</section>
+
+
 
 
 <script>
+    AOS.init();
+
+
+
     var a = 0;
     var b = 0;
     var c = 0;
@@ -194,12 +230,8 @@
         $("#chain").html("<div></div>");
 
 
-
-
-
-blockchain=rs.blockchain;
+        blockchain = rs.blockchain;
         rs.blockchain.map(function (block) {
-
 
 
             if (block.Data.Reciver === "0x111111") a = a + block.Data.Amount;
@@ -226,10 +258,10 @@ blockchain=rs.blockchain;
             if (block.Validate === false) color = "red";
 
             $("#chain").append(`
-  <div class="col-md-4">
+  <div data-aos="fade-up-right" class="col-md-4 card-hover">
 
 
-        <div style="font-size: 13px" class="mr-8 shadow p-3 mb-5 bg-white rounded">
+        <div style="font-size: 13px" class="mr-8 shadow-lg p-3 mb-5 bg-white rounded">
             <div class="label">
                 ${rs.blockchain.indexOf(block)}
             </div>
@@ -245,7 +277,7 @@ blockchain=rs.blockchain;
             </div>
             <div class="row">
                 <div class="col-md-3"><b>Amount</b></div>
-                <div class="col-md-9"><span><input value="${block.Data.Amount}"></span></div>
+                <div class="col-md-9"><span><div value="">${block.Data.Amount}</div></span></div>
             </div>
             <div class="row">
                 <div class="col-md-3"><b>Reciver</b></div>
@@ -268,11 +300,6 @@ blockchain=rs.blockchain;
 
 
         })
-
-
-
-
-
 
 
     });
@@ -306,21 +333,23 @@ blockchain=rs.blockchain;
 
     $("#transfer").click(function () {
 
+
+
         var sender = $("#sender").val();
         var reciver = $("#reciver").val();
         var amount = $("#amount").val();
-var go=false;
+        var go = false;
 
         if (sender === "0x111111") {
             if (a >= amount) {
-                go=true;
+                go = true;
             } else {
                 alert("Insufficient Amount ! Please Select Other Account")
             }
         }
         if (sender === "0x222222") {
             if (b >= amount) {
-                go=true;
+                go = true;
 
             } else {
                 alert("Insufficient Amount ! Please Select Other Account")
@@ -328,7 +357,7 @@ var go=false;
         }
         if (sender === "0x333333") {
             if (c >= amount) {
-                go=true;
+                go = true;
 
             } else {
                 alert("Insufficient Amount ! Please Select Other Account")
@@ -358,9 +387,14 @@ var go=false;
 
         var miner = $("#miner").val();
 
-        if(go===true) {
+        if (go === true) {
+            $("#section").hide();
+            $("#spinner").show();
+
             $.get(`/cryptoadd?miner=${miner}&sender=${sender}&amount=${amount}&reciver=${reciver}&prevhash=${blockchain[blockchain.length - 1].CurrHash}`, function (rs, status) {
 
+                $("#section").show();
+                $("#spinner").hide();
                 console.log(rs.blockchain);
                 $("#chain").html("<div></div>");
 
@@ -393,10 +427,10 @@ var go=false;
                     if (block.Validate === false) color = "red";
 
                     $("#chain").append(`
-  <div class="col-md-4">
+  <div  class="col-md-4">
 
 
-        <div style="font-size: 13px" class="mr-8 shadow-lg p-3 mb-5 bg-white rounded">
+        <div style="font-size: 13px"  data-aos="fade-up-right"  class="mr-8 shadow-lg p-3 mb-5 bg-white rounded">
             <div class="label">
                 ${rs.blockchain.indexOf(block)}
             </div>
