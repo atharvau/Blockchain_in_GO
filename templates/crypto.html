@@ -26,7 +26,7 @@
 <body style="font-family: 'IBM Plex Sans', sans-serif;   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 ">
-<div id="spinner" style="position: absolute;text-align: center;top: 40%;left:47%;z-index: 10;">
+<div hidden id="spinner" style="position: absolute;text-align: center;top: 40%;left:47%;z-index: 10;">
     <div class="spinner-border text-primary">
 
     </div>
@@ -230,6 +230,7 @@
         $("#chain").html("<div></div>");
 
 
+
         blockchain = rs.blockchain;
         rs.blockchain.map(function (block) {
 
@@ -249,9 +250,9 @@
             console.log(a, b, c);
 
 
-            $("#a").html(`<h1 style="font-size: 45px">${a}</h1></div>`);
-            $("#b").html(`<h1 style="font-size: 45px">${b}</h1></div>`);
-            $("#c").html(`<h1 style="font-size: 45px">${c}</h1></div>`);
+            $("#a").html(`<h1 style="font-size: 45px">${rs.wallets[0].Amount}</h1></div>`);
+            $("#b").html(`<h1 style="font-size: 45px">${rs.wallets[1].Amount}</h1></div>`);
+            $("#c").html(`<h1 style="font-size: 45px">${rs.wallets[2].Amount}</h1></div>`);
 
 
             var color = "white";
@@ -334,6 +335,9 @@
     $("#transfer").click(function () {
 
 
+        var i = 0;
+        var j = 0;
+        var k = 0;
 
         var sender = $("#sender").val();
         var reciver = $("#reciver").val();
@@ -388,6 +392,8 @@
         var miner = $("#miner").val();
 
         if (go === true) {
+
+
             $("#section").hide();
             $("#spinner").show();
 
@@ -395,11 +401,14 @@
 
                 $("#section").show();
                 $("#spinner").hide();
+
                 console.log(rs.blockchain);
                 $("#chain").html("<div></div>");
 
 
                 blockchain = rs.blockchain;
+
+
                 rs.blockchain.map(function (block) {
 
 
@@ -417,20 +426,18 @@
 
                     console.log(a, b, c);
 
-
-                    $("#a").html(`<h1 style="font-size: 45px">${a}</h1></div>`);
-                    $("#b").html(`<h1 style="font-size: 45px">${b}</h1></div>`);
-                    $("#c").html(`<h1 style="font-size: 45px">${c}</h1></div>`);
-
+                    $("#a").html(`<h1 style="font-size: 45px">${rs.wallets[0].Amount}</h1></div>`);
+                    $("#b").html(`<h1 style="font-size: 45px">${rs.wallets[1].Amount}</h1></div>`);
+                    $("#c").html(`<h1 style="font-size: 45px">${rs.wallets[2].Amount}</h1></div>`);
 
                     var color = "white";
                     if (block.Validate === false) color = "red";
 
                     $("#chain").append(`
-  <div  class="col-md-4">
+  <div data-aos="fade-up-right" class="col-md-4 card-hover">
 
 
-        <div style="font-size: 13px"  data-aos="fade-up-right"  class="mr-8 shadow-lg p-3 mb-5 bg-white rounded">
+        <div style="font-size: 13px" class="mr-8 shadow-lg p-3 mb-5 bg-white rounded">
             <div class="label">
                 ${rs.blockchain.indexOf(block)}
             </div>
@@ -446,7 +453,7 @@
             </div>
             <div class="row">
                 <div class="col-md-3"><b>Amount</b></div>
-                <div class="col-md-9"><span><input class="input is-info"  value="${block.Data.Amount}"></span></div>
+                <div class="col-md-9"><span><div value="">${block.Data.Amount}</div></span></div>
             </div>
             <div class="row">
                 <div class="col-md-3"><b>Reciver</b></div>

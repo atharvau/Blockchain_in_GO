@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>GLTF Loading in THREE.js</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Kumar+One+Outline&display=swap" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" type="text/css" href="fullpage.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200&display=swap" rel="stylesheet" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet" />
+
+    <!-- This following line is optional. Only necessary if you use the option css3:false and you want to use other easing effects rather than "easeInOutCubic". -->
+    <script src="vendors/easings.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet" />
+    <!-- This following line is only necessary in the case of using the option `scrollOverflow:true` -->
+    <script type="text/javascript" src="vendors/scrolloverflow.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet" />
+
+    <script type="text/javascript" src="fullpage.js"></script>
+  </head>
+
+  <body  class="visible-md-block"
+    style="height: 100vh;width: 100%;text-align: center; background-color: #1C1826
+  "
+  >
+
+
+  <section id="desktop">
+
+    <div id="canvas" style="position:fixed;z-index:3;width: 300px;height: 100px;"></div>
+
+    <div
+            class="shadow-lg animated bounceInRight "
+            style="position: absolute;height: 60%;width: 50%;background-color: #182133;left: 30%;z-index: 2;
+      border-radius: 22px;
+  top: 20%
+    "
+    ></div>
+
+    <div
+            class="animated bounceInLeft "
+            class="shadow-lg"
+            style="position: absolute;height: 70%;
+      width: 30%;
+      background-color: #6CC5D9;
+      left: 15%;z-index: 1;
+    border-radius: 22px;
+    top:15%;opacity: 0.8;
+  "
+    ></div>
+    <div
+            style="position: absolute;
+      font-family: 'IBM Plex Sans', sans-serif;
+
+    left: 45%;z-index: 6;
+  border-radius: 22px;
+  top:30%
+;
+"
+    >
+      <h1>
+        <div
+                class="animated fadeIn d-none d-sm-block "
+                style="font-size: 50px;color: white;font-family: 'Roboto Condensed', sans-serif;text-align: left;
+
+
+        "
+
+        >
+          <b>BLOCKCHAIN </b>
+        </div>
+        <div
+                class="animated fadeIn hidden-md-down"
+                style="font-size: 50px;color: white;font-family: 'Roboto Condensed', sans-serif;text-align: left;
+
+
+      "
+        >
+          <b>IN GOLANG </b>
+        </div>
+      </h1>
+      <h1 class="animated fadeIn" style="text-align: left">
+        <span
+                style="font-size: 30px
+          ;color: white
+          ;font-family: 'Source Sans Pro', sans-serif;"
+        >
+          DAA Assignment 1</span
+        >
+        <h1 class="animated fadeIn" style="text-align: left">
+          <span
+                  style="font-size: 30px
+              ;color:white
+              ;font-family: 'Source Sans Pro', sans-serif;
+;z-index: 20"
+          >
+            This Projects contains Simulation of 2 Blockchains
+            <br />Simple and Crypto All code is available on Github
+          </span>
+        </h1>
+      </h1>
+      <br />
+      <br />
+      <br />
+
+      <h1 style="text-align: right;">
+        <b style="font-size: 80px;color: white   ">
+          <!-- START -->
+        </b>
+      </h1>
+    </div>
+    <div style="left: 2%;position: absolute;transform: rotate(0deg);top: 3%;z-index: 33;">
+      <span>
+        <img class="animated fadeInDown" style="height: 70px;width:70px;" src="./templates/blck.png" />
+      </span>
+      <span class="animated fadeInDown" style="font-family: 'Open Sans Condensed', sans-serif;color: white;font-size: 40px;margin-top: 400px">BLOCKCHAIN </span>
+    </div>
+
+    <div
+            class="animated fadeIn"
+            style="position: absolute;left:-7%;top:45%;transform: rotate(-90deg);color: white;font-size: 20px;font-family: 'Open Sans Condensed', sans-serif;
+    "
+    >
+      -----------GITHUB----------LINKEDIN----------FACEBOOK---------
+    </div>
+    <div
+            class="animated fadeInUp"
+            style=" font-family: 'Open Sans Condensed', sans-serif;
+    position: absolute;z-index: 8; color: white;right: 1%;bottom: 1%;font-size: 30px;
+"
+    >
+      Developed By Atharva Udapure
+    </div>
+
+    <a
+            class="shadow-lg animated rotateIn card-hover"
+            style="position: absolute;
+  font-family: 'IBM Plex Sans', sans-serif;
+left: 74%;z-index: 8;
+
+height: 100px;
+width: 200px;top:61%; font-size: 40px;
+background: linear-gradient(to right, #3a6186, #89253e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+;padding-top: 25px;color: white;font-family: 'Roboto Condensed', sans-serif;border-radius: 18px"
+            href="/demo"
+    >
+      <b> START </b>
+    </a>
+
+
+  </section>
+
+
+  <section>
+
+
+    
+
+
+  </section>
+
+
+    <!-- 
+
+    <div class="row">
+
+    </div>
+   
+      <h1 style="font-size: 340px;">GO</h1>
+    </div>
+
+
+    <div class="shadow-lg rounded" style="position: absolute;bottom: 5%;height: 200px;width:500px;background-color:wheat;right: 4%;z-index: 3">
+     </div>
+
+ <div
+ 
+ style="border-radius:50%;position:  absolute;bottom: 4%;height: 100px;width:100px;background-color:red;right: 2%;z-index: 4">
+ 
+ </div> -->
+<script>
+
+  $(window).resize(function() {
+    if($(window).width() <= 480){
+
+
+    }
+  });
+</script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init()
+    </script>
+    <script src="https://unpkg.com/three@0.87.1/build/three.js"></script>
+    <script src="https://unpkg.com/three@0.87.1/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="./templates/OrbitControls.js"></script>
+
+    <script src="./templates/script.js"></script>
+  </body>
+</html>

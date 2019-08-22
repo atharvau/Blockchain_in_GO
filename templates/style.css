@@ -1,0 +1,17 @@
+canvas {
+  display: block;
+}
+html {
+  overflow: hidden;
+  background: wheat;
+}
+s {
+  color: aqua;
+}
+
+parallelogram {
+  width: 150px;
+  height: 100px;
+  transform: skew(20deg);
+  background: red;
+}

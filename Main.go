@@ -70,9 +70,11 @@ func main() {
 	router := gin.New()
 	//router.Use(cors.Default())
 	router.Use(gin.Logger())
-	router.LoadHTMLGlob("templates/*")
+	router.LoadHTMLGlob("templates/*.html")
 
-	info := TransInfo{"0x000000", "0x111111", 50, "0x222222"}
+	router.Static("/templates", "./templates")
+
+	info := TransInfo{"0x000000", "0x111111", 50, "0x333333"}
 	cryptochain = CryptoAddBlock(info, "0", cryptochain)
 
 	info = TransInfo{"0x000000", "0x222222", 50, "0x111111"}
@@ -94,7 +96,9 @@ func main() {
 		fmt.Println(bchain)
 		fmt.Println(Opp)
 
-		c.JSON(200, gin.H{"blockchain": bchain})
+		c.HTML(http.StatusOK, "index.html", gin.H{
+			"title": "Main website",
+		})
 	})
 	router.GET("/reset", func(c *gin.Context) {
 		bchain = []Block{}
@@ -143,11 +147,16 @@ func main() {
 	router.GET("/changediff", func(c *gin.Context) {
 
 		i, err := strconv.Atoi(c.Query("diff"))
-		diff = uint64(i)
+		if uint64(i) > 0 && uint64(i) < 6 {
+			diff = uint64(i)
+
+		}
 		fmt.Println(err)
+
 		c.JSON(200, gin.H{"blockchain": bchain})
 
 	})
+
 	router.GET("/cryptoreset", func(c *gin.Context) {
 		cryptochain = []CryptoBlock{}
 		info := TransInfo{"0x000000", "0x111111", 50, "0x222222"}
@@ -177,7 +186,8 @@ func main() {
 
 	router.GET("/crypto", func(c *gin.Context) {
 
-		c.JSON(200, gin.H{"blockchain": cryptochain})
+		wallets = CryptoCalculate(cryptochain)
+		c.JSON(200, gin.H{"blockchain": cryptochain, "wallets": wallets})
 
 	})
 
@@ -198,8 +208,11 @@ func main() {
 		amnt, erri := strconv.Atoi(c.Query("amount"))
 		fmt.Println(erri)
 		info := TransInfo{c.Query("sender"), c.Query("reciver"), uint64(amnt), c.Query("miner")}
+
 		cryptochain = CryptoAddBlock(info, c.Query("prevhash"), cryptochain)
-		c.JSON(200, gin.H{"blockchain": cryptochain})
+		wallets = CryptoCalculate(cryptochain)
+
+		c.JSON(200, gin.H{"blockchain": cryptochain, "wallets": wallets})
 
 	})
 
@@ -428,65 +441,64 @@ func CryptoSetBlock(blockchain []CryptoBlock, pos uint64, Data TransInfo) []Cryp
 
 func CryptoCalculate(blockchain []CryptoBlock) []Wallet {
 
-	var s uint64 = 0
+	var a uint64 = 0
 	var b uint64 = 0
-	var m uint64 = 0
+	var c uint64 = 0
 
-	for i := 0; i < len(blockchain)-1; i++ {
+	for i := 0; i < len(blockchain); i++ {
 
 		if blockchain[i].Data.Reciver == "0x111111" {
-			s = s + blockchain[i].Data.Amount
-			wallets[0].Amount = s
+			a = a + blockchain[i].Data.Amount
+			wallets[0].Amount = a
 
 		}
-
 		if blockchain[i].Data.Reciver == "0x222222" {
-			m = m + blockchain[i].Data.Amount
-			wallets[1].Amount = m
+			b = b + blockchain[i].Data.Amount
+			wallets[1].Amount = b
 
 		}
 		if blockchain[i].Data.Reciver == "0x333333" {
-			b = b + blockchain[i].Data.Amount
-			wallets[2].Amount = b
+			c = c + blockchain[i].Data.Amount
+			wallets[2].Amount = c
 
 		}
 
 		////////////////////////////////////
 
 		if blockchain[i].Data.Sender == "0x111111" {
-			s = s - blockchain[i].Data.Amount
-			wallets[0].Amount = s
+			a = a - blockchain[i].Data.Amount
+			wallets[0].Amount = a
 
 		}
 
 		if blockchain[i].Data.Sender == "0x222222" {
 
-			m = m - blockchain[i].Data.Amount
-			wallets[1].Amount = m
+			b = b - blockchain[i].Data.Amount
+			wallets[1].Amount = b
 
 		}
 		if blockchain[i].Data.Sender == "0x333333" {
-			b = b - blockchain[i].Data.Amount
-			wallets[2].Amount = b
+			c = c - blockchain[i].Data.Amount
+			wallets[2].Amount = c
 
 		}
 
 		//////////////////////////////////////
 
 		if blockchain[i].Data.Miner == "0x111111" {
-			s++
-			wallets[0].Amount = s
+			a++
+			wallets[0].Amount = a
 
 		}
 
 		if blockchain[i].Data.Miner == "0x222222" {
-			m++
-			wallets[1].Amount = m
+			b++
+			wallets[1].Amount = b
 
 		}
 		if blockchain[i].Data.Miner == "0x333333" {
-			b++
-			wallets[2].Amount = b
+			c++
+			wallets[2].Amount = c
 
 		}
 
