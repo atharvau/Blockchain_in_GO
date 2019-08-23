@@ -1,7 +1,7 @@
 <p align="center">
-<img height=100px src="https://i.imgur.com/ZoSs6PW.pnghttps://i.imgur.com/ZoSs6PW.png" >  
+<img height=100px src="https://i.imgur.com/ZoSs6PW.pnghttps://i.imgur.com/ZoSs6PW.png" />  
 <h1 align="center"> Blockchain Demonstartion in GOLANG </h1>
-<h4 align="center">The Aim of The Project is provide a Visual Simualtion of Blockchain World for those who are new to this Technology  </h1>
+<h4 align="center">The Aim of The Project is provide a Visual Simualtion of Blockchain World for those who are new to this Technology  </h4>
 </p>
 
 
@@ -194,6 +194,7 @@ The Blockchain can be cleared easily cleared by clicking
 
 You can Change the contents of blockchain by inputing data and clicking Change Data Button 
 It Corrupts the blockchain and display corrupted Chain in Red Color
+
 ![alt text](https://i.imgur.com/GljX13A.gif)
 
 ## How To Use :  Crypto Blockchain
