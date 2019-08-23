@@ -1,10 +1,19 @@
 <html>
 <head>
-    <style type="text/css" media="screen">
-        <!--
-        @import url("/templates/demo.css");
-        -->
-    </style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146366377-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-146366377-1');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Simple Blockchain</title>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -19,87 +28,103 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"/>
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 
 </head>
 
-<body style="font-family: 'IBM Plex Sans', sans-serif">
+<body  style="font-family: 'IBM Plex Sans', sans-serif;padding: 0% 2% 2% 2%">
 
-<div hidden id="spinner" style="position: absolute;text-align: center;top: 40%;left:47%;z-index: 10;">
-    <div class="spinner-border text-primary">
 
-    </div>
 
-    <h1 style="margin-top: 20px"><b>  MINING..</b></h1>
+
+<div id="spinner"  style=" position: fixed; height: 340px;width: 340px;
+  z-index: 1031;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);"
+     class="spinner-grow text-primary"
+     role="status">
 
 </div>
-<br/>
 
-<section class="boxshadow" id="section" >
+<section   id="section" >
+    <div style="margin-top: 30px" class="row ">
 
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a  href="https://bulma.io">
-                <img style="height: 70px;width:70px;"  src="./templates/blockchain.png" >
-            </a>
 
-            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
-        </div>
+        <div class="col-xs-4 col-4 text-center d-block d-md-none"><h1><a  style="color: black" href="/">Home  </a> </h1></div>
+        <div class="col-xs-4 col-4 text-center d-block d-md-none"><h1><a style="color: black"  href="/demo">Simple Blockchain  </a> </h1></div>
+        <div class="col-xs-4 col-4 text-center d-block d-md-none"><h1><a style="color: black"  href="/cryptodemo">Crypto Blockchain  </a> </h1></div>
 
-        <div id="navbarBasicExample" class="navbar-menu">
-            <div class="navbar-start">
-
-                <a style="font-size: 30px" class="navbar-item">
-                    SIMPLE BLOCKCHAIN
-                </a>
-                <a style="font-size: 30px" class="navbar-item">
-                    CRYPTO BLOCKCHAIN
+    </div>
+    <div class="d-none d-md-block">
+        <nav class="navbar " role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a  href="/">
+                    <img style="height: 70px;width:70px;"  src="./templates/blockchain.png" >
                 </a>
 
-                <div style="font-size: 30px" class="navbar-item has-dropdown is-hoverable">
-                    <a style="font-size: 30px" class="navbar-link">
-                        More
-                    </a>
-
-                    <div class="navbar-dropdown">
-                        <a style="font-size: 30px" class="navbar-item">
-                            How To Use
-                        </a>
-                        <a style="font-size: 30px"  class="navbar-item">
-                            Github
-                        </a>
-                        <a style="font-size: 30px"  class="navbar-item">
-                            Contact
-                        </a>
-
-                    </div>
-                </div>
+                <a  role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
             </div>
 
+            <div id="navbarBasicExample" class="navbar-menu ">
+                <div class="navbar-start">
 
-        </div>
-    </nav>
+                    <a href="/demo" style="font-size: 20px;color: black" class="navbar-item">
+                        SIMPLE BLOCKCHAIN
+                    </a>
+                    <a href="/cryptodemo" style="font-size: 20px;color: black" class="navbar-item">
+                        CRYPTO BLOCKCHAIN
+                    </a>
+
+                    <div  style="font-size: 20px" class="navbar-item has-dropdown is-hoverable">
+                        <a style="font-size: 20px" class="navbar-link">
+                            More
+                        </a>
+
+                        <div class="navbar-dropdown">
+                            <a  href="https://github.com/atharvau/Blockchain_in_GO" style="font-size: 20px" class="navbar-item">
+                                How To Use
+                            </a>
+                            <a href="https://github.com/atharvau/Blockchain_in_GO" style="font-size: 20px"  class="navbar-item">
+                                Github
+                            </a>
+                            <a href="https://in.linkedin.com/in/atharva-udapure" style="font-size: 20px"  class="navbar-item">
+                                Contact
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </nav>
+    </div>
+
     <br/>
     <br/>
     <br/>
+
+
+    <h2 style="text-align: center" class="title is-2 animated fadeInDown">Blockchain Demo</h2>
     <br/><br/><br/>
-    <br/>
-
-
-    <h2 style="text-align: center" class="title is-2">Blockchain Demo</h2>
-    <br/><br/><br/>
-    <div class="row justify-content-md-center">
-        <div class="col-md-6 mr-8 shadow-lg p-3 mb-5 bg-white rounded col-xs-12">
+    <div class="row justify-content-md-center ">
+        <div class="col-md-8 mr-8 shadow-lg p-3 mb-5 bg-white rounded col-xs-12 animated fadeInUp">
             <div class="row justify-content-md-center">
-                <div class="col-md-4">
+                <div class="col-md-4 col-12 ">
 
                     <div class="field">
                         <label class="label">Add New Block</label>
                         <div class="control has-icons-left has-icons-right">
-                            <input  id="newdata"class="input is-success" type="text" placeholder="Text input" value="">
+                            <input value="000" id="newdata"class="input is-success" type="text" placeholder="Text input" value="">
                             <span class="icon is-small is-left">
       <i class="fas fa-user"></i>
     </span>
@@ -163,7 +188,7 @@
     <div class="row justify-content-md-center">
 
         <div class="col-md-10 justify-center">
-            <div id="chain" class="row">
+            <div id="chain" class="row justify-content-md-center" >
 
 
             </div>
@@ -177,9 +202,18 @@
 
 
 <script type="text/javascript">
+    $(document).ready(function() {
+            $("#spinner").hide()
+            //
+            //
+            //
+            //
+            // $("#section").show()
+        }
+    )
 
+    $.get("/getchain", function (rs, status) {
 
-    $.get("/", function (rs, status) {
 
 
         console.log(rs.blockchain);
@@ -190,7 +224,7 @@
 
             var color = "white";
             if (block.Validate === false) color="#E91E63";
-            $("#chain").append(`<div  class="col-md-4 "  > <div  style="background-color: ${color};  " class="mr-8 shadow-lg p-3 mb-5  rounded">
+            $("#chain").append(`<div  class="col-md-4 col-xs-10 col-10  animated fadeInRight "  > <div  style="background-color: ${color};  " class="mr-8 shadow-lg p-3 mb-5  rounded">
                 <div class="label">
 ${rs.blockchain.indexOf(block)}
                 </div>
@@ -228,16 +262,28 @@ ${rs.blockchain.indexOf(block)}
 
 
     $("#add").click(function () {
+
+
+
         // alert("Handler for .click() called." + $("#newdata").val());
 
-
-        $("#section").hide();
         $("#spinner").show();
 
+        $("#section").hide();
 
-        $.get("/addblock?data=" + $("#newdata").val(), function (rs, status) {
-            $("#section").show();
+var hiu="";
+if($("#newdata").val()==="")
+    hiu="000"
+        else
+            hiu=$("#newdata").val()
+
+
+        $.get("/addblock?data=" + hiu, function (rs, status) {
+
             $("#spinner").hide();
+
+            $("#section").show();
+
 
 
             console.log(rs.blockchain);
@@ -248,7 +294,7 @@ ${rs.blockchain.indexOf(block)}
 
                 var color = "white";
                 if (block.Validate === false) color="#E91E63";
-                $("#chain").append(`<div  class="col-md-4 "  > <div  style="background-color: ${color};  " class="mr-8 shadow-lg p-3 mb-5 bg-white rounded">
+                $("#chain").append(`<div  class="col-md-4 animated fadeInRight "  > <div  style="background-color: ${color};  " class="mr-8 shadow-lg p-3 mb-5 bg-white rounded">
                 <div class="label">
 ${rs.blockchain.indexOf(block)}
                 </div>
@@ -305,7 +351,7 @@ ${rs.blockchain.indexOf(block)}
 
                 var color = "white";
                 if (block.Validate === false) color="#E91E63";
-                $("#chain").append(`<div  class="col-md-4 "  > <div  style="background-color: ${color};  " class="mr-8 shadow-lg p-3 mb-5 bg-white rounded">
+                $("#chain").append(`<div  class="col-md-4 animated fadeInRight  "  > <div  style="background-color: ${color};  " class="mr-8 shadow-lg p-3 mb-5 bg-white rounded">
                 <div class="label">
 ${rs.blockchain.indexOf(block)}
                 </div>
@@ -363,7 +409,7 @@ ${rs.blockchain.indexOf(block)}
 
                     var color = "white";
                     if (block.Validate === false) color = "#E91E63";
-                    $("#chain").append(`<div  class="col-md-4 "  > <div  style="background-color: ${color};  " class="mr-8 shadow-lg p-3 mb-5 bg-white rounded">
+                    $("#chain").append(`<div  class="col-md-4 animated fadeInRight  "  > <div  style="background-color: ${color};  " class="mr-8 shadow-lg p-3 mb-5 bg-white rounded">
                 <div class="label">
 ${rs.blockchain.indexOf(block)}
                 </div>
@@ -408,14 +454,14 @@ ${rs.blockchain.indexOf(block)}
     function f(e) {
         // alert("Handler for .click() called." + $("#newdata").val());
         var str = "#block" + e;
-
-        $("#section").hide();
         $("#spinner").show();
+        $("#section").hide();
 
         $.get("/setdata?index=" + e + "&data=" + $(str).val(), function (rs, status) {
 
             console.log(rs.blockchain);
             $("#chain").html("<div></div>");
+
 
             $("#section").show();
             $("#spinner").hide();
@@ -426,7 +472,7 @@ ${rs.blockchain.indexOf(block)}
 
                     var color = "white";
                     if (block.Validate === false) color="#E91E63";
-                    $("#chain").append(`<div  class="col-md-4 "  > <div  style="background-color: ${color};  " class="mr-8 shadow-lg p-3 mb-5 bg-white rounded">
+                    $("#chain").append(`<div  class="col-md-4  animated fadeInRight "  > <div  style="background-color: ${color};  " class="mr-8 shadow-lg p-3 mb-5 bg-white rounded">
                 <div class="label">
 ${rs.blockchain.indexOf(block)}
                 </div>
@@ -475,7 +521,7 @@ ${rs.blockchain.indexOf(block)}
 
                     var color = "white";
                     if (block.Validate === false) color="#E91E63";
-                    $("#chain").append(`<div  class="col-md-4 "  > <div  style="background-color: ${color};  " class="mr-8 shadow-lg p-3 mb-5  rounded">
+                    $("#chain").append(`<div  class="col-md-4   animated fadeInRight "  > <div  style="background-color: ${color};  " class="mr-8 shadow-lg p-3 mb-5  rounded">
                 <div class="label">
 ${rs.blockchain.indexOf(block)}
                 </div>

@@ -144,14 +144,30 @@ func main() {
 		})
 	})
 
+	router.GET("/getchain", func(c *gin.Context) {
+
+		c.JSON(200, gin.H{"blockchain": bchain})
+
+	})
+
+	router.GET("/getcchain", func(c *gin.Context) {
+
+		c.JSON(200, gin.H{"blockchain": cryptochain})
+
+	})
 	router.GET("/changediff", func(c *gin.Context) {
 
 		i, err := strconv.Atoi(c.Query("diff"))
-		if uint64(i) > 0 && uint64(i) < 6 {
-			diff = uint64(i)
+
+		if err != nil {
+			if uint64(i) > 0 && uint64(i) < 6 {
+				diff = uint64(i)
+
+			}
+
+		} else {
 
 		}
-		fmt.Println(err)
 
 		c.JSON(200, gin.H{"blockchain": bchain})
 

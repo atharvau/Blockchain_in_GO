@@ -1,8 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146366377-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-146366377-1');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Crypto Blockchain</title>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -23,24 +35,94 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 </head>
-<body style="font-family: 'IBM Plex Sans', sans-serif;   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+<body style="font-family: 'IBM Plex Sans', sans-serif;
+  padding: 0% 2% 2% 2%
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 ">
-<div hidden id="spinner" style="position: absolute;text-align: center;top: 40%;left:47%;z-index: 10;">
-    <div class="spinner-border text-primary">
 
-    </div>
 
-    <h1 style="margin-top: 20px"><b>  MINING..</b></h1>
+
+
+        <div id="spinner"  style=" position: fixed; height: 340px;width: 340px;
+  z-index: 1031;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);"  class="spinner-grow text-primary" role="status">
+
+
+
+
+        </div>
+<div id="spinner2"  />
+
+
 
 </div>
-<section id="section">
 
-    <div class="fluid">
 
-        <br/> <br/>
-        <br/> <br/>
-        <br/> <br/>
+
+
+<section    id="section">
+
+    <div style="margin-top: 30px" class="row ">
+
+
+        <div class="col-xs-4 col-4 text-center d-block d-md-none"><h1><a  style="color: black" href="/">Home  </a> </h1></div>
+        <div class="col-xs-4 col-4 text-center d-block d-md-none"><h1><a style="color: black"  href="/demo">Simple Blockchain  </a> </h1></div>
+        <div class="col-xs-4 col-4 text-center d-block d-md-none"><h1><a style="color: black"  href="/cryptodemo">Crypto Blockchain  </a> </h1></div>
+
+    </div>
+    <div class="d-none d-md-block">
+        <nav class="navbar " role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a  href="/">
+                    <img style="height: 70px;width:70px;"  src="./templates/blockchain.png" >
+                </a>
+
+                <a  role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbarBasicExample" class="navbar-menu ">
+                <div class="navbar-start">
+
+                    <a href="/demo" style="font-size: 20px;color: black" class="navbar-item">
+                        SIMPLE BLOCKCHAIN
+                    </a>
+                    <a href="/cryptodemo" style="font-size: 20px;color: black" class="navbar-item">
+                        CRYPTO BLOCKCHAIN
+                    </a>
+
+                    <div  style="font-size: 20px" class="navbar-item has-dropdown is-hoverable">
+                        <a style="font-size: 20px" class="navbar-link">
+                            More
+                        </a>
+
+                        <div class="navbar-dropdown">
+                            <a  href="https://github.com/atharvau/Blockchain_in_GO" style="font-size: 20px" class="navbar-item">
+                                How To Use
+                            </a>
+                            <a href="https://github.com/atharvau/Blockchain_in_GO" style="font-size: 20px"  class="navbar-item">
+                                Github
+                            </a>
+                            <a href="https://in.linkedin.com/in/atharva-udapure" style="font-size: 20px"  class="navbar-item">
+                                Contact
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </nav>
+    </div>
+
+        <br/>
 
         <h1  style="color: black;text-align: center" class="title">Wallets</h1>
         <br/>
@@ -48,17 +130,17 @@
 
 
         <div  data-aos="flip-left" id="wallet" class="row justify-content-center">
-            <div  class="col-md-3">
+            <div  class="col-md-3  ">
 
                 <div class="row shadow-lg p-3 mb-5 bg-white rounded">
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-xs-4 col-4">
                         <img src="https://i.imgur.com/yMY1aiG.png" style="  border-radius: 50%;">
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-xs-4 col-4">
                         <div style="margin-top: 20px"><h2>STEVE </h2></div>
                         <div><h4>0x111111</h4></div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-xs-4 col-4">
 
                         <div style="margin-top: 10px" id="a"><h1 style="font-size: 55px">50</h1></div>
                     </div>
@@ -68,28 +150,28 @@
 
             <div class="col-md-3">
                 <div style="padding: 22px" class="row shadow-lg p-3 mb-5 bg-white rounded">
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-xs-4 col-4">
                         <img src="https://i.imgur.com/TO08xap.png" style="  border-radius: 50%;">
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-xs-4 col-4">
                         <div style="margin-top: 20px"><h2>MARK </h2></div>
                         <div><h4>0x222222</h4></div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-xs-4 col-4">
                         <div id="b"><h1 style="font-size: 45px">50</h1></div>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div style="padding: 22px" class="row shadow-lg p-3 mb-5 bg-white rounded">
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-xs-4 col-4">
                         <img src="https://i.imgur.com/TQhJzRV.png" style="  border-radius: 50%;">
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-xs-4 col-4">
                         <div style="margin-top: 20px"><h2>BILL </h2></div>
                         <div><h4>0x333333</h4></div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-xs-4 col-4">
                         <div id="c"><h1 style="font-size: 45px">50</h1></div>
                     </div>
                 </div>
@@ -218,6 +300,16 @@
 <script>
     AOS.init();
 
+    $(document).ready(function() {
+            $("#spinner").hide()
+            $("#spinner2").hide()
+
+
+
+
+        $("#section").show()
+    }
+    )
 
 
     var a = 0;
@@ -393,14 +485,19 @@
 
         if (go === true) {
 
+            $("#spinner").show()
+            $("#spinner2").show()
 
-            $("#section").hide();
-            $("#spinner").show();
+
+
+
+            $("#section").hide()
 
             $.get(`/cryptoadd?miner=${miner}&sender=${sender}&amount=${amount}&reciver=${reciver}&prevhash=${blockchain[blockchain.length - 1].CurrHash}`, function (rs, status) {
 
                 $("#section").show();
                 $("#spinner").hide();
+                $("#spinner2").hide();
 
                 console.log(rs.blockchain);
                 $("#chain").html("<div></div>");

@@ -91,13 +91,19 @@ var gltf
 var loader = new THREE.GLTFLoader()
 loader.crossOrigin = true
 loader.load('./templates/scene.gltf', function(data) {
-  object = data.scene
+  bject = data.scene
   object.depthWrite = false
 
-  object.scale.set(0.1, 0.1, 0.1)
-  object.position.set(0.5, -0.7, 0)
+  object.scale.set(5, 7, 8);
+  object.position.set(-0.5, -0.7, 0)
   object.rotation.set(-0.3, 2.4, 0.4)
   renderer.render(scene, camera)
+
+
+  object.position.set(-0.1, 0, 0)
+  object.rotation.set(-0.3, 2.9, 0.4)
+
+
   object.position.y = -0.2
 
   gltf = data
@@ -115,7 +121,7 @@ loader.load('./templates/scene.gltf', function(data) {
 
 function animate() {
   requestAnimationFrame(animate)
-  // object.rotation.y += 0.002
+   object.rotation.y += 0.002
   controls.update()
   if (mixer) {
     mixer.update(clock.getDelta() * mixer.timeScale)
