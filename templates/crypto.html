@@ -176,6 +176,21 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-md-3">
+                <div style="padding: 22px" class="row shadow-lg p-3 mb-5 bg-white rounded">
+                    <div class="col-md-4 col-xs-4 col-4">
+                        <img src="https://image.flaticon.com/icons/svg/138/138358.svg" style="  border-radius: 50%;">
+                    </div>
+                    <div class="col-md-4 col-xs-4 col-4">
+                        <div style="margin-top: 20px"><h2>UnMinned </h2></div>
+                        <div><h4>0x000000</h4></div>
+                    </div>
+                    <div class="col-md-4 col-xs-4 col-4">
+                        <div id="d"><h1 style="font-size: 45px">50</h1></div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <br/> <br/>
@@ -223,7 +238,6 @@
                             <div class="control is-expanded">
                                 <div class="select is-fullwidth">
                                     <select id="reciver" name="reciver">
-                                        <option value="0x111111">Steve</option>
                                         <option value="0x222222">Mark</option>
                                         <option value="0x333333">Bill</option>
                                     </select>
@@ -240,9 +254,8 @@
                             <div class="control is-expanded">
                                 <div class="select is-fullwidth">
                                     <select id="miner" disabled name="miner">
-                                        <option value="0x111111">Steve</option>
-                                        <option value="0x222222">Mark</option>
                                         <option value="0x333333">Bill</option>
+                                        <option value="0x222222">Mark</option>
                                     </select>
                                 </div>
                             </div>
@@ -312,6 +325,12 @@
     )
 
 
+
+
+
+
+
+
     var a = 0;
     var b = 0;
     var c = 0;
@@ -346,6 +365,7 @@
             $("#b").html(`<h1 style="font-size: 45px">${rs.wallets[1].Amount}</h1></div>`);
             $("#c").html(`<h1 style="font-size: 45px">${rs.wallets[2].Amount}</h1></div>`);
 
+            $("#d").html(`<h1 style="font-size: 45px">${rs.wallets[3].Amount}</h1></div>`);
 
             var color = "white";
             if (block.Validate === false) color = "red";
@@ -396,6 +416,22 @@
 
 
     });
+
+
+
+
+
+
+
+
+
+
+    $("#reciver").on('change',function () {
+
+
+    })
+
+
 
 
     $("#sender").on('change', function () {
@@ -526,6 +562,7 @@
                     $("#a").html(`<h1 style="font-size: 45px">${rs.wallets[0].Amount}</h1></div>`);
                     $("#b").html(`<h1 style="font-size: 45px">${rs.wallets[1].Amount}</h1></div>`);
                     $("#c").html(`<h1 style="font-size: 45px">${rs.wallets[2].Amount}</h1></div>`);
+                    $("#d").html(`<h1 style="font-size: 45px">${rs.wallets[3].Amount}</h1></div>`);
 
                     var color = "white";
                     if (block.Validate === false) color = "red";

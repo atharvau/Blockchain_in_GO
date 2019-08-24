@@ -1,6 +1,6 @@
 <p align="center">
 <img height=100px src="https://i.imgur.com/ZoSs6PW.pnghttps://i.imgur.com/ZoSs6PW.png" />  
-<h1 align="center"> Blockchain Demonstartion in GOLANG </h1>
+<h1 align="center"> Blockchain Demo in GOLANG </h1>
 <h4 align="center">The Aim of The Project is provide a Visual Simualtion of Blockchain World for those who are new to this Technology  </h4>
 <h4 align="center">Live Demo  <a href="https://blockchaingo.herokuapp.com/">https://blockchaingo.herokuapp.com/ </a>  </h4>
 

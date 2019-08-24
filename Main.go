@@ -86,10 +86,12 @@ func main() {
 	steve := Wallet{"Steve", 0, "0x111111"}
 	mark := Wallet{"Mark", 0, "0x222222"}
 	bill := Wallet{"Bill", 0, "0x333333"}
+	unalloc := Wallet{"UnMinned Crypto Coins ", 0, "0x000000"}
 
 	wallets = append(wallets, steve)
 	wallets = append(wallets, mark)
 	wallets = append(wallets, bill)
+	wallets = append(wallets, unalloc)
 
 	router.GET("/", func(c *gin.Context) {
 
@@ -155,6 +157,7 @@ func main() {
 		c.JSON(200, gin.H{"blockchain": cryptochain})
 
 	})
+
 	router.GET("/changediff", func(c *gin.Context) {
 
 		i, err := strconv.Atoi(c.Query("diff"))
@@ -433,6 +436,7 @@ func CryptoValidateChain(blockchain []CryptoBlock) []CryptoBlock {
 /////REMINE
 
 func CryptoReMine(blockchain []CryptoBlock) {
+
 	for i := 0; i < len(blockchain); i++ {
 		var buffer bytes.Buffer
 
@@ -445,6 +449,7 @@ func CryptoReMine(blockchain []CryptoBlock) {
 		b.PrevHash = blockchain[i].PrevHash
 		b.Timestamp = blockchain[i].Timestamp
 		blockchain[i] = b
+
 	}
 
 }
@@ -460,6 +465,7 @@ func CryptoCalculate(blockchain []CryptoBlock) []Wallet {
 	var a uint64 = 0
 	var b uint64 = 0
 	var c uint64 = 0
+	var d uint64 = 200
 
 	for i := 0; i < len(blockchain); i++ {
 
@@ -484,6 +490,8 @@ func CryptoCalculate(blockchain []CryptoBlock) []Wallet {
 		if blockchain[i].Data.Sender == "0x111111" {
 			a = a - blockchain[i].Data.Amount
 			wallets[0].Amount = a
+			d = d - 1
+			wallets[3].Amount = d
 
 		}
 
@@ -491,11 +499,21 @@ func CryptoCalculate(blockchain []CryptoBlock) []Wallet {
 
 			b = b - blockchain[i].Data.Amount
 			wallets[1].Amount = b
+			d = d - 1
+			wallets[3].Amount = d
 
 		}
 		if blockchain[i].Data.Sender == "0x333333" {
 			c = c - blockchain[i].Data.Amount
 			wallets[2].Amount = c
+			d = d - 1
+			wallets[3].Amount = d
+
+		}
+
+		if blockchain[i].Data.Sender == "0x000000" {
+			d = d - 1
+			wallets[3].Amount = d
 
 		}
 
