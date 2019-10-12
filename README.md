@@ -7,7 +7,7 @@
 </p>
 
 
-![alt text](https://img.shields.io/badge/GOLANG-1.12.9-brightgreen)  ![alt text](https://img.shields.io/badge/Gin%20Web%20Framework-1.4.0-blue) ![alt text](https://img.shields.io/badge/HTML-5-red)  ![alt text](https://img.shields.io/badge/Jquery%20-3.1.0-yellow) ![alt text](https://img.shields.io/badge/Heroku-Free%20Dyno-lightgrey)  ![alt text](https://img.shields.io/badge/license-MIT-green)  ![alt text](https://img.shields.io/badge/build-passing-brightgreen)
+![alt text](https://img.shields.io/badge/GOLANG-1.12.9-brightgreen)  ![alt text](https://img.shields.io/badge/Gin%20Web%20Framework-1.4.0-blue) ![alt text](https://img.shields.io/badge/HTML-5-red)  ![alt text](https://img.shields.io/badge/Jquery%20-3.1.0-yellow) ![alt text](https://img.shields.io/badge/Heroku-Free%20Dyno-lightgrey)  ![alt text](https://img.shields.io/badge/license-MIT-green)  ![alt text](https://img.shields.io/badge/build-passing-brightgreen) [![Build Status](https://travis-ci.org/atharvau/Blockchain_in_GO.svg?branch=master)](https://travis-ci.org/atharvau/Blockchain_in_GO)
  
 
 
