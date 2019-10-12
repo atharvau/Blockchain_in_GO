@@ -1,12 +1,15 @@
 language: go
 
 go: 
-- "1.13"
-
-notifications:
-  email: false
+  - "1.13"
 
 git:
   depth: 1
 
+script: 
+  - go get github.com/gin-gonic/gin
+
 install: true
+
+notifications:
+  email: false
